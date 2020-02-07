@@ -11,22 +11,22 @@ import java.util.Objects;
  * <p>
  * 3.双重check（防止锁过大，影响资源）
  */
-public class LazySingleTonDoubleCheck {
+public class LazySingletonDoubleCheck {
 
     //延迟加载   volatile防止重排序
-    private volatile static LazySingleTonDoubleCheck instance;
+    private volatile static LazySingletonDoubleCheck instance;
 
-    public static LazySingleTonDoubleCheck getInstance() {
+    public static LazySingletonDoubleCheck getInstance() {
         if (Objects.isNull(instance)) {
-            synchronized (LazySingleTonDoubleCheck.class) {
+            synchronized (LazySingletonDoubleCheck.class) {
                 if (Objects.isNull(instance)) {
-                    instance = new LazySingleTonDoubleCheck();
+                    instance = new LazySingletonDoubleCheck();
                 }
             }
         }
         return instance;
     }
 
-    public LazySingleTonDoubleCheck() {
+    public LazySingletonDoubleCheck() {
     }
 }

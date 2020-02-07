@@ -10,16 +10,16 @@ package demo.singleTon.hunger;
  * <p>
  * 3.唯一的方法获得实例
  */
-public class HungerSingleTon {
+public class HungerSingleton {
 
-    public final static HungerSingleTon instance = new HungerSingleTon();
+    public final static HungerSingleton instance = new HungerSingleton();
 
 
-    public static HungerSingleTon getInstance() {
+    public static HungerSingleton getInstance() {
         return instance;
     }
 
-    private HungerSingleTon() {
+    private HungerSingleton() {
 
     }
 }
